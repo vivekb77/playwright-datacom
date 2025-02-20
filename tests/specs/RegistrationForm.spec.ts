@@ -20,7 +20,7 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       await expect(await registrationForm.getSuccessMessageText()).toBe(
-        "Successfully registered the following information"
+        "Successfully registered the following information",
       );
 
       const displayedData = await registrationForm.getDisplayedFormData();
@@ -38,7 +38,7 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       await expect(await registrationForm.getSuccessMessageText()).toBe(
-        "Successfully registered the following information"
+        "Successfully registered the following information",
       );
 
       const displayedData = await registrationForm.getDisplayedFormData();
@@ -58,7 +58,7 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       await expect(await registrationForm.getSuccessMessageText()).not.toBe(
-        "Successfully registered the following information"
+        "Successfully registered the following information",
       );
     });
 
@@ -74,14 +74,13 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       await expect(await registrationForm.getSuccessMessageText()).toBe(
-        "Successfully registered the following information"
+        "Successfully registered the following information",
       );
 
       const displayedData = await registrationForm.getDisplayedFormData();
       expect(displayedData.lastName).toBe("Last Name: Kohli"); // output is Kohl
     });
   });
-
 
   test.describe("Phone Number Field Tests", () => {
     test("Validate Phone Number is required", async () => {
@@ -94,7 +93,7 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       await expect(await registrationForm.getSuccessMessageText()).toBe(
-        "The phone number should contain at least 10 characters!"
+        "The phone number should contain at least 10 characters!",
       );
     });
 
@@ -110,7 +109,7 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       await expect(await registrationForm.getSuccessMessageText()).toBe(
-        "Successfully registered the following information"
+        "Successfully registered the following information",
       );
 
       const displayedData = await registrationForm.getDisplayedFormData();
@@ -129,7 +128,7 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       await expect(await registrationForm.getSuccessMessageText()).not.toBe(
-        "Successfully registered the following information"
+        "Successfully registered the following information",
       );
     });
 
@@ -144,7 +143,7 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       await expect(await registrationForm.getSuccessMessageText()).toBe(
-        "The phone number should contain at least 10 characters!"
+        "The phone number should contain at least 10 characters!",
       );
     });
 
@@ -162,7 +161,7 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       await expect(await registrationForm.getSuccessMessageText()).toBe(
-        "Successfully registered the following information"
+        "Successfully registered the following information",
       );
     });
 
@@ -177,7 +176,7 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       await expect(await registrationForm.getSuccessMessageText()).toBe(
-        "Successfully registered the following information"
+        "Successfully registered the following information",
       );
 
       const displayedData = await registrationForm.getDisplayedFormData();
@@ -199,7 +198,7 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       expect(await registrationForm.getSuccessMessageText()).not.toBe(
-        "Successfully registered the following information"
+        "Successfully registered the following information",
       );
     });
 
@@ -214,7 +213,7 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       await expect(await registrationForm.getSuccessMessageText()).toBe(
-        "Successfully registered the following information"
+        "Successfully registered the following information",
       );
 
       const displayedData = await registrationForm.getDisplayedFormData();
@@ -233,12 +232,10 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       expect(await registrationForm.getSuccessMessageText()).not.toBe(
-        "Successfully registered the following information"
+        "Successfully registered the following information",
       );
     });
   });
-
-
 
   test.describe("Password Field Tests", () => {
     // Bug #9 -  type of password is set to text instead of password, so password is visible on the UI
@@ -253,7 +250,7 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       expect(await registrationForm.getSuccessMessageText()).toBe(
-        "The password should contain between [6,20] characters!"
+        "The password should contain between [6,20] characters!",
       );
     });
 
@@ -268,7 +265,7 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       expect(await registrationForm.getSuccessMessageText()).toBe(
-        "The password should contain between [6,20] characters!"
+        "The password should contain between [6,20] characters!",
       );
     });
 
@@ -283,7 +280,7 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       expect(await registrationForm.getSuccessMessageText()).toBe(
-        "The password should contain between [6,20] characters!"
+        "The password should contain between [6,20] characters!",
       );
     });
 
@@ -298,7 +295,7 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       expect(await registrationForm.getSuccessMessageText()).toBe(
-        "Successfully registered the following information"
+        "Successfully registered the following information",
       );
     });
 
@@ -314,40 +311,36 @@ test.describe("Registration Form validation Tests", () => {
       await registrationForm.clickRegister();
 
       expect(await registrationForm.getSuccessMessageText()).toBe(
-        "Successfully registered the following information"
+        "Successfully registered the following information",
       );
     });
   });
 
-
-
   test.describe("Terms and Conditions Tests", () => {
-
     // Bug #11 - terms and conditions check box is disabled
     test("Validate if terms and conditions checkbox is clickable", async () => {
-        await registrationForm.fillFirstName("Virat");
-        await registrationForm.fillLastName("Kohli");
-        await registrationForm.fillPhoneNumber("0275645622");
-        await registrationForm.fillPassword("%3.e&N)Bs69");
-        await registrationForm.selectCountry("Niger");
-        await registrationForm.checkTerms();
-  
-        await registrationForm.clickRegister();
-  
-        expect(await registrationForm.getSuccessMessageText()).not.toBe(
-          "Successfully registered the following information"
-        );
+      await registrationForm.fillFirstName("Virat");
+      await registrationForm.fillLastName("Kohli");
+      await registrationForm.fillPhoneNumber("0275645622");
+      await registrationForm.fillPassword("%3.e&N)Bs69");
+      await registrationForm.selectCountry("Niger");
+      await registrationForm.checkTerms();
+
+      await registrationForm.clickRegister();
+
+      expect(await registrationForm.getSuccessMessageText()).not.toBe(
+        "Successfully registered the following information",
+      );
     });
 
     // Bug #12 - No clickable link to view terms and conditions
-
   });
 
-   // Bug #13 - This message should be at the bottom of the form "Note: All the fields marked with * are mandatory"
+  // Bug #13 - This message should be at the bottom of the form "Note: All the fields marked with * are mandatory"
 
-   // Bug #14 - Form can be submitted without checking terms and conditions checkbox
+  // Bug #14 - Form can be submitted without checking terms and conditions checkbox
 
-   // Bug #15 - Form is not cleard after successful submission
+  // Bug #15 - Form is not cleard after successful submission
 
-   // Bug #16 Password is not validated for complexity, eg. Should have special chars
+  // Bug #16 Password is not validated for complexity, eg. Should have special chars
 });
