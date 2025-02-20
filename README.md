@@ -1,7 +1,8 @@
-Go to Project root directory and install Dependency: npm install
-
 Run Tests
-Go to Project root directory and run command: npm test
+npm test
 
 View HTML report
-Go to Project root directory: npm run report
+npm run report
+
+
+Test scenarios and bugs are in the spec file.
